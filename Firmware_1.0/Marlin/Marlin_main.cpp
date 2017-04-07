@@ -1719,22 +1719,25 @@ void process_commands()
       lastpos[Y_AXIS]=current_position[Y_AXIS];
       lastpos[Z_AXIS]=current_position[Z_AXIS];
       lastpos[E_AXIS]=current_position[E_AXIS];
+      
+      target[E_AXIS] += FILAMENTCHANGE_FIRSTRETRACT;
 
-
-      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], feedrate/60, active_extruder);
+      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], 3000/60, active_extruder);
 
       target[Z_AXIS]+= FILAMENTCHANGE_ZADD;
-      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], feedrate/60, active_extruder);
+      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], 6000/60, active_extruder);
 
-      #if X_MAX_POS < 250
+     /* #if X_MAX_POS < 250
 	target[X_AXIS]= 0 ;
 	target[Y_AXIS]= 150 ;
       #else
 	target[X_AXIS]= X_MAX_POS - 5 ;
 	target[Y_AXIS]= Y_MAX_POS - 5 ;
-      #endif
+      #endif*/
+  target[X_AXIS]=5;
+  target[Y_AXIS]=5;
 
-      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], feedrate/60, active_extruder);
+      plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], 6000/60, active_extruder);
 
       st_synchronize();
 
@@ -1745,15 +1748,15 @@ void process_commands()
       while(!lcd_clicked()){
         manage_heater();
         lcd_update();
-        plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS],current_position[E_AXIS], 300/60, active_extruder);
+        plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS],target[E_AXIS], 300/60, active_extruder);
         st_synchronize();
       }
       st_synchronize();
 
       plan_buffer_line(target[X_AXIS], target[Y_AXIS], target[Z_AXIS], target[E_AXIS], feedrate/60, active_extruder); //should do nothing
-      plan_buffer_line(lastpos[X_AXIS], lastpos[Y_AXIS], target[Z_AXIS], target[E_AXIS], feedrate/60, active_extruder); //move xy back
-      plan_buffer_line(lastpos[X_AXIS], lastpos[Y_AXIS], lastpos[Z_AXIS], target[E_AXIS], feedrate/60, active_extruder); //move z back
-      plan_buffer_line(lastpos[X_AXIS], lastpos[Y_AXIS], lastpos[Z_AXIS], lastpos[E_AXIS], feedrate/60, active_extruder); //final untretract
+      plan_buffer_line(lastpos[X_AXIS], lastpos[Y_AXIS], target[Z_AXIS], target[E_AXIS], 6000/60, active_extruder); //move xy back
+      plan_buffer_line(lastpos[X_AXIS], lastpos[Y_AXIS], lastpos[Z_AXIS], target[E_AXIS], 6000/60, active_extruder); //move z back
+      plan_buffer_line(lastpos[X_AXIS], lastpos[Y_AXIS], lastpos[Z_AXIS], lastpos[E_AXIS], 3000/60, active_extruder); //final untretract
 
       stop_buffer = false;
 
