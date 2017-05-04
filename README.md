@@ -2,7 +2,7 @@
 In this repository you will find the firmware source code, BOM, STLs of the printed parts and frames for the [Blocks zero 3D printer](http://blockstec.com/zero.html)
 
 
-#U pdating the firmware:
+# Updating the firmware:
  - Download and install Cura 15.02.1: [Win](http://software.ultimaker.com/old/Cura_15.02.1.exe) / [Mac](http://software.ultimaker.com/old/Cura-15.02.1-MacOS.dmg)
  - Download the [HEX file](http://blockstec.com/downloads/Blocks_zero_1.2.hex)
  - Connect your USB printer cable
