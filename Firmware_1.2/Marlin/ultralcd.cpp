@@ -1236,15 +1236,18 @@ void lcd_level_bed()
           lcd_printPGM(PSTR("Filament unloaded!"));         
           
           ChangeScreen=false;
+          FilamentMenuActive=false;
           delay(1200);    
           
-          encoderPosition = 0;
-          lcd.clear(); 
+       encoderPosition = 0;
+          //lcd.clear(); 
           currentMenu = lcd_filament_menu;
-          lcd_update();
+          //lcd_update();
           //lcd_status_screen();
           pageShowInfo=0;
-          FilamentMenuActive=false;
+          lcd_update();
+          lcd_quick_feedback();
+          
      
         }
         break;
