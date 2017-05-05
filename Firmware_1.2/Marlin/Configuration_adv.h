@@ -17,8 +17,8 @@
 //  differ by at least 2x WATCH_TEMP_INCREASE
 #define WATCH_TEMP_PERIOD 40000 //40 seconds
 #define WATCH_TEMP_INCREASE 2  //Heat up at least 10 degree in 20 seconds
-#define THERMAL_RUNAWAY_PROTECTION_PERIOD 40        // Seconds
-#define THERMAL_RUNAWAY_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+#define THERMAL_RUNAWAY_PROTECTION_PERIOD 80        // Seconds
+#define THERMAL_RUNAWAY_PROTECTION_HYSTERESIS 15     // Degrees Celsius
 
 
 

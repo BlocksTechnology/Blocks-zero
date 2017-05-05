@@ -412,14 +412,14 @@ static void lcd_sdcard_stop()
     quickStop();
 
    // plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS]-6, 5000/60, active_extruder);
-
-      plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS]+20, current_position[E_AXIS], manual_feedrate[X_AXIS]/60, active_extruder);
+current_position[Z_AXIS]=current_position[Z_AXIS]+20;
+      plan_buffer_line(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS], manual_feedrate[X_AXIS]/60, active_extruder);
  
 enquecommand_P(PSTR("G28 X Y"));
 
     if(SD_FINISHED_STEPPERRELEASE)
     {
-        enquecommand_P(PSTR(SD_FINISHED_RELEASECOMMAND));
+       // enquecommand_P(PSTR(SD_FINISHED_RELEASECOMMAND));
     }
     autotempShutdown();
 
@@ -736,7 +736,7 @@ void lcd_cooldown()
     setTargetHotend1(0);
     setTargetHotend2(0);
     setTargetBed(0);
-    fanSpeed = 0;
+    fanSpeed = 255;
     lcd_return_to_status();
 }
 
