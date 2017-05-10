@@ -14,16 +14,17 @@ In case the update does not start, please verify the "Serial port" and "Baudrate
 
 
 # Changelog:
-V1.2- features added:
+V1.2.1:
+ - Homing after print bug solved
+V1.2:
  - USB communication bug solved
  - Baudrate changed to 250000
-V1.1- features added:
+V1.1:
  - New load/unload filament routine
  - Option to clean the nozzle before bed level
  - Thermal runaway safety feature
  - Filament runout (needs printing new extruder and adding a microswitch to work)
  - Reversed direction of the LCD knob
-
 
 
 # License

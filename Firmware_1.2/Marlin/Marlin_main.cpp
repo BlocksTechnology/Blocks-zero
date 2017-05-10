@@ -1599,11 +1599,11 @@ void process_commands()
         delayed_move_time = 0;
         active_extruder_parked = true;
       #else
-  destination[Z_AXIS] = 8 * home_dir(Z_AXIS) * (-1);    // Set destination away from bed
+ /* destination[Z_AXIS] = destination[Z_AXIS] + 6 * home_dir(Z_AXIS) * (-1);    // Set destination away from bed
               feedrate = max_feedrate[Z_AXIS];
               plan_buffer_line(destination[X_AXIS], destination[Y_AXIS], destination[Z_AXIS], destination[E_AXIS], feedrate, active_extruder);
               current_position[Z_AXIS]=destination[Z_AXIS];
-              st_synchronize();
+              st_synchronize();*/
 
 
         HOMEAXIS(X);

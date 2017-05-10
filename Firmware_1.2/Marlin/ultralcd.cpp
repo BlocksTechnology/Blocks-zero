@@ -1842,6 +1842,7 @@ static void menu_action_function(menuFunc_t data) { (*data)(); }
 static void menu_action_sdfile(const char* filename, char* longFilename)
 {
   enquecommand_P(PSTR("G28"));
+  enquecommand_P(PSTR("G1 Z5"));
     setTargetHotend0(200);
     char cmd[30];
     char* c;
