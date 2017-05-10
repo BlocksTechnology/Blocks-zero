@@ -1924,7 +1924,7 @@ void lcd_init()
     lcd.clear();
     lcd.setCursor(5, 1);
     lcd_printPGM(PSTR(MSG_WELLCOME)); 
-    lcd.setCursor(15, 3);
+    lcd.setCursor(14, 3);
     lcd_printPGM(PSTR(FIRMWARE_VER));    
     delay(1500);
     lcd.clear();
@@ -1935,7 +1935,7 @@ static void lcd_splash()
     lcd.clear();
     lcd.setCursor(5, 1);
     lcd_printPGM(PSTR(MSG_WELLCOME));
-    lcd.setCursor(15, 3);
+    lcd.setCursor(14, 3);
     lcd_printPGM(PSTR(FIRMWARE_VER));    
     delay(1500);
     lcd.clear(); 

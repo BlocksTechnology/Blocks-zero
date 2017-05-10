@@ -10,7 +10,7 @@
 
 #define MACHINE_NAME "Blocks zero"
 	#define FIRMWARE_URL "http://www.blockstec.com"
-	#define FIRMWARE_VER "v1.2"
+	#define FIRMWARE_VER "v1.2.1"
 
 #define WELCOME_MSG                         MACHINE_NAME " ready."
 #define MSG_SD_INSERTED                     "Card inserted"
