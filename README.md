@@ -4,7 +4,7 @@ In this repository you will find the firmware source code, BOM, STLs of the prin
 
 # Updating the firmware:
  - Download and install Cura 15.02.1: [Win](http://software.ultimaker.com/old/Cura_15.02.1.exe) / [Mac](http://software.ultimaker.com/old/Cura-15.02.1-MacOS.dmg)
- - Download the [HEX file](http://blockstec.com/downloads/Blocks_zero_1.2.hex)
+ - Download the [HEX file](http://blockstec.com/downloads/Blocks_zero_1.2.1.hex)
  - Connect your USB printer cable
  - Open Cura and select menu "Machine" -> "Install custom firmware"
  - Select the downloaded HEX file.
